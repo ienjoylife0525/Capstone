@@ -40,7 +40,7 @@ class dataset(object):
 
         #if 'train' in filename:
 
-        #self.prepare_word2vec()
+        self.prepare_word2vec()
         self.word2index = json.load(open('word2index_redial.json', encoding='utf-8'))
         self.key2index=json.load(open('key2index_3rd.json',encoding='utf-8'))
 
