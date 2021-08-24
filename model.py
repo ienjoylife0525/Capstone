@@ -154,6 +154,7 @@ class CrossModel(nn.Module):
         edge_list, self.n_relation = _edge_list(self.kg, opt['n_entity'], hop=2)
         edge_list = list(set(edge_list))
         print(len(edge_list), self.n_relation)
+        print(torch.cuda.is_available())
         self.dbpedia_edge_sets=torch.LongTensor(edge_list).cuda()
         self.db_edge_idx = self.dbpedia_edge_sets[:, :2].t()
         self.db_edge_type = self.dbpedia_edge_sets[:, 2]
